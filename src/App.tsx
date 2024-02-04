@@ -1,5 +1,11 @@
+import { OverviewIA } from "./components/OverviewIA";
+
 function App() {
-  return <h1 className="text-red-400">Tópicos especiais em IA</h1>;
+  return (
+    <div className="max-w-[1440px] flex flex-col m-auto p-4">
+      <OverviewIA />
+    </div>
+  );
 }
 
 export { App };
