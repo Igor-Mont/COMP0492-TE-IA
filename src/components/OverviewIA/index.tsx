@@ -1,3 +1,6 @@
+import IAPainting from "../../assets/ia_painting.png";
+import IAThinking from "../../assets/ia_thinking.png";
+
 function OverviewIA(): JSX.Element {
   return (
     <main className="w-full flex flex-col gap-4">
@@ -31,7 +34,7 @@ function OverviewIA(): JSX.Element {
           <img
             style={{ margin: 0 }}
             className="h-[400px] lg:h-full"
-            src="src/assets/hero_ia.png"
+            src={IAPainting}
             alt="Robo pintando um quadro."
           />
         </div>
@@ -52,7 +55,7 @@ function OverviewIA(): JSX.Element {
           <img
             style={{ margin: 0 }}
             className="h-[400px] lg:h-full"
-            src="src/assets/ia_thinking.png"
+            src={IAThinking}
             alt="Robo pintando um quadro."
           />
         </div>
