@@ -182,7 +182,7 @@ function OverviewIA(): JSX.Element {
           permitiram a geração rápida de planos complexos, e a influência da IA
           na automação de tarefas intelectuais. O PDF fornece uma visão geral
           abrangente da história, evolução e aplicações atuais da Inteligência
-          Artificial
+          Artificial.
         </p>
       </article>
     </main>
