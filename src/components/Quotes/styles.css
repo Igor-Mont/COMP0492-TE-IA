@@ -1,5 +1,17 @@
+@media (max-width: 1203px) {
+  .small-card {
+    height: 400px !important;
+  }
+}
+
 @media (max-width: 907px) {
   .quote-card {
-    height: 500px;
+    height: 550px !important;
+  }
+}
+
+@media (max-width: 611px) {
+  .quote-card {
+    height: 500px !important;
   }
 }

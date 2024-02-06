@@ -97,55 +97,50 @@ function Quotes(): JSX.Element {
           </h1>
         </div>
       </article>
-      <div className="w-full flex items-start flex-wrap gap-4">
-        {quotes.map((quote, i) => {
-          const cardHeigthClass =
-            i === quotes.length - 1 ? "h-400px xl:h-[550px]" : "h-[550px]";
-          return (
-            <div
-              key={i}
-              className={
-                "quote-card card min-w-[280px] card-compact flex-1 bg-base-100 shadow-xl " +
-                cardHeigthClass
-              }
-            >
-              <figure className="h-[250px]">
+      <div className="w-full flex items-start flex-wrap gap-4 ">
+        {quotes.map((quote, i) => (
+          <div
+            key={i}
+            className={`quote-card card min-w-[280px] h-[600px] ${
+              i === quotes.length - 1 ? "small-card" : ""
+            } card-compact flex-1 bg-base-100 shadow-xl`}
+          >
+            <figure className="h-[250px]">
+              <img
+                className="h-full w-full object-cover"
+                src={quote.image_url}
+                alt={quote.author}
+              />
+            </figure>
+            <div className="card-body ">
+              <h2 className="card-title">{quote.author}</h2>
+              <p>{quote.message}</p>
+              <div className="w-full flex justify-end gap-2">
                 <img
-                  className="h-full w-full object-cover"
-                  src={quote.image_url}
-                  alt={quote.author}
+                  width={36}
+                  src={FlagBrasil}
+                  onClick={() => handleFlagClick(i, FLAG.BRAZIL, quote)}
+                  className="cursor-pointer"
+                  alt="Bandeira do Brasil"
                 />
-              </figure>
-              <div className="card-body ">
-                <h2 className="card-title">{quote.author}</h2>
-                <p>{quote.message}</p>
-                <div className="w-full flex justify-end gap-2">
-                  <img
-                    width={36}
-                    src={FlagBrasil}
-                    onClick={() => handleFlagClick(i, FLAG.BRAZIL, quote)}
-                    className="cursor-pointer"
-                    alt="Bandeira do Brasil"
-                  />
-                  <img
-                    width={36}
-                    src={FlagEUA}
-                    onClick={() => handleFlagClick(i, FLAG.EUA, quote)}
-                    className="cursor-pointer"
-                    alt="Bandeira dos EUA"
-                  />
-                  <img
-                    width={36}
-                    src={FlagSpain}
-                    onClick={() => handleFlagClick(i, FLAG.SPAIN, quote)}
-                    className="cursor-pointer"
-                    alt="Bandeira da Espanha"
-                  />
-                </div>
+                <img
+                  width={36}
+                  src={FlagEUA}
+                  onClick={() => handleFlagClick(i, FLAG.EUA, quote)}
+                  className="cursor-pointer"
+                  alt="Bandeira dos EUA"
+                />
+                <img
+                  width={36}
+                  src={FlagSpain}
+                  onClick={() => handleFlagClick(i, FLAG.SPAIN, quote)}
+                  className="cursor-pointer"
+                  alt="Bandeira da Espanha"
+                />
               </div>
             </div>
-          );
-        })}
+          </div>
+        ))}
       </div>
     </div>
   );
