@@ -28,7 +28,7 @@ const messagesQuotes: ChatMessage[] = [
   {
     owner: "Aluno",
     description:
-      "Com esse áudio padrão em mãos, utilizamos o FineShare para trasnformar essa voz na voz do Elon Musk.",
+      "Com esse áudio padrão em mãos, utilizamos o FineShare para trasnformar essa voz na voz do Elon Musk e do Stephen Hawking.",
     left_talker: false,
     time: "19:16",
     status: "Vista",
@@ -37,6 +37,15 @@ const messagesQuotes: ChatMessage[] = [
     owner: "Aluno",
     description:
       'Daí quando finalmente fizemos o download desse áudio "original", usamos o VoCloner na v2 para fazer a transformação vocal para português e espanhol.',
+    left_talker: false,
+    time: "19:16",
+    status: "Vista",
+  },
+
+  {
+    owner: "Aluno",
+    description:
+      "Vale lembrar que os áudios em português e espanhol estão limitadas a 200 caracteres pois é o que a plataforma do VoCloner nos proporciona gratuitamente.",
     left_talker: false,
     time: "19:16",
     status: "Vista",
