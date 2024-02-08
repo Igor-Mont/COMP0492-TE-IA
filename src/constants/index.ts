@@ -1,1 +1,1 @@
-export * from "./QUOTES";
+export * from "./quotes";

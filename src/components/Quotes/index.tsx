@@ -6,6 +6,7 @@ import SpeakerIcon from "../../assets/speaker_icon.png";
 import ElonMuskAudioEnglish from "../../assets/elonmusk_english.mp3";
 import ElonMuskAudioBrazil from "../../assets/elonmusk_brazil.mp3";
 import ElonMuskAudioSpain from "../../assets/elonmusk_spanish.mp3";
+import StephenHawkingAudioEnglish from "../../assets/stephenhawking_english.mp3";
 import "./styles.css";
 import { FLAG, Quote } from "../../models";
 import { QUOTES } from "../../constants";
@@ -43,8 +44,8 @@ function Quotes(): JSX.Element {
 
     setIsPlaying(true);
 
+    let audioSource = "";
     if (index === 0) {
-      let audioSource = "";
       switch (flag) {
         case FLAG.EUA:
           audioSource = ElonMuskAudioEnglish;
@@ -58,16 +59,30 @@ function Quotes(): JSX.Element {
         default:
           audioSource = "";
       }
-
-      if (audioSource !== "") {
-        const audio = new Audio(audioSource);
-        audio.play();
-        setCurrentAudio(audio);
-
-        audio.onended = () => {
-          setIsPlaying(false);
-        };
+    } else if (index === 2) {
+      switch (flag) {
+        case FLAG.EUA:
+          audioSource = StephenHawkingAudioEnglish;
+          break;
+        case FLAG.BRAZIL:
+          audioSource = StephenHawkingAudioEnglish;
+          break;
+        case FLAG.SPAIN:
+          audioSource = StephenHawkingAudioEnglish;
+          break;
+        default:
+          audioSource = "";
       }
+    }
+
+    if (audioSource !== "") {
+      const audio = new Audio(audioSource);
+      audio.play();
+      setCurrentAudio(audio);
+
+      audio.onended = () => {
+        setIsPlaying(false);
+      };
     }
   };
 
