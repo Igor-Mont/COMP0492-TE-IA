@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { FLAG, Quote } from "../../models";
 import FlagBrasil from "../../assets/brasil.png";
 import FlagEUA from "../../assets/eua.png";
 import FlagSpain from "../../assets/spain.png";
@@ -7,11 +8,13 @@ import ElonMuskAudioEnglish from "../../assets/elonmusk_english.mp3";
 import ElonMuskAudioBrazil from "../../assets/elonmusk_brazil.mp3";
 import ElonMuskAudioSpain from "../../assets/elonmusk_spanish.mp3";
 import StephenHawkingAudioEnglish from "../../assets/stephenhawking_english.mp3";
-import "./styles.css";
-import { FLAG, Quote } from "../../models";
+import StephenHawkingAudioBrazil from "../../assets/stephenhawking_brazil.mp3";
+import StephenHawkingAudioSpain from "../../assets/stephenhawking_spanish.mp3";
 import { QUOTES } from "../../constants";
+import "./styles.css";
 
 function Quotes(): JSX.Element {
+  const authorsWithAudio = ["Elon Musk", "Stephen Hawking"];
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentAudio, setCurrentAudio] = useState<HTMLAudioElement | null>(
     null
@@ -65,10 +68,10 @@ function Quotes(): JSX.Element {
           audioSource = StephenHawkingAudioEnglish;
           break;
         case FLAG.BRAZIL:
-          audioSource = StephenHawkingAudioEnglish;
+          audioSource = StephenHawkingAudioBrazil;
           break;
         case FLAG.SPAIN:
-          audioSource = StephenHawkingAudioEnglish;
+          audioSource = StephenHawkingAudioSpain;
           break;
         default:
           audioSource = "";
@@ -114,18 +117,7 @@ function Quotes(): JSX.Element {
               <h2 className="card-title">{quote.author}</h2>
               <p>{quote.message}</p>
               <div className="w-full flex justify-between">
-                <div className="hover:scale-110 transition-all">
-                  <img
-                    width={36}
-                    src={SpeakerIcon}
-                    onClick={() =>
-                      handleSpeakerClick(i, quote.current_flag, quote)
-                    }
-                    className="cursor-pointer"
-                    alt="Ícone de um alto falante"
-                  />
-                </div>
-                <div className="flex gap-2">
+                <div className="flex gap-2 ">
                   <img
                     width={36}
                     src={FlagEUA}
@@ -148,6 +140,19 @@ function Quotes(): JSX.Element {
                     alt="Bandeira da Espanha"
                   />
                 </div>
+                {authorsWithAudio.includes(quote.author) && (
+                  <div className="hover:scale-110 transition-all">
+                    <img
+                      width={36}
+                      src={SpeakerIcon}
+                      onClick={() =>
+                        handleSpeakerClick(i, quote.current_flag, quote)
+                      }
+                      className="cursor-pointer"
+                      alt="Ícone de um alto falante"
+                    />
+                  </div>
+                )}
               </div>
             </div>
           </div>
