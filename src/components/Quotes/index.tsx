@@ -13,6 +13,18 @@ import StephenHawkingAudioSpain from "../../assets/stephenhawking_spanish.mp3";
 import { QUOTES } from "../../constants";
 import "./styles.css";
 
+const audiosElonMuskMap = new Map([
+  [FLAG.BRAZIL, ElonMuskAudioBrazil],
+  [FLAG.EUA, ElonMuskAudioEnglish],
+  [FLAG.SPAIN, ElonMuskAudioSpain],
+]);
+
+const audiosStephenHawkingMap = new Map([
+  [FLAG.BRAZIL, StephenHawkingAudioBrazil],
+  [FLAG.EUA, StephenHawkingAudioEnglish],
+  [FLAG.SPAIN, StephenHawkingAudioSpain],
+]);
+
 function Quotes(): JSX.Element {
   const authorsWithAudio = ["Elon Musk", "Stephen Hawking"];
   const [isPlaying, setIsPlaying] = useState(false);
@@ -38,44 +50,16 @@ function Quotes(): JSX.Element {
     setQuotes(updatedQuotes);
   };
 
-  const handleSpeakerClick = (index: number, flag: FLAG, quote: Quote) => {
-    console.log(quote);
-
-    if (isPlaying) {
-      currentAudio?.pause();
-    }
+  const handleSpeakerClick = (index: number, flag: FLAG) => {
+    if (isPlaying) currentAudio?.pause();
 
     setIsPlaying(true);
 
     let audioSource = "";
     if (index === 0) {
-      switch (flag) {
-        case FLAG.EUA:
-          audioSource = ElonMuskAudioEnglish;
-          break;
-        case FLAG.BRAZIL:
-          audioSource = ElonMuskAudioBrazil;
-          break;
-        case FLAG.SPAIN:
-          audioSource = ElonMuskAudioSpain;
-          break;
-        default:
-          audioSource = "";
-      }
+      audioSource = audiosElonMuskMap.get(flag) as string;
     } else if (index === 2) {
-      switch (flag) {
-        case FLAG.EUA:
-          audioSource = StephenHawkingAudioEnglish;
-          break;
-        case FLAG.BRAZIL:
-          audioSource = StephenHawkingAudioBrazil;
-          break;
-        case FLAG.SPAIN:
-          audioSource = StephenHawkingAudioSpain;
-          break;
-        default:
-          audioSource = "";
-      }
+      audioSource = audiosStephenHawkingMap.get(flag) as string;
     }
 
     if (audioSource !== "") {
@@ -145,9 +129,7 @@ function Quotes(): JSX.Element {
                     <img
                       width={36}
                       src={SpeakerIcon}
-                      onClick={() =>
-                        handleSpeakerClick(i, quote.current_flag, quote)
-                      }
+                      onClick={() => handleSpeakerClick(i, quote.current_flag)}
                       className="cursor-pointer"
                       alt="Ícone de um alto falante"
                     />
