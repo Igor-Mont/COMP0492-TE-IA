@@ -1,1 +1,2 @@
-export * from "./Quotes";
+export * from "./Quote";
+export * from "./ChatMessage";
