@@ -1,6 +1,6 @@
 import { FLAG, Quote } from "../models";
 
-export const QUOTES: Quote[] = [
+const QUOTES: Quote[] = [
   {
     author: "Elon Musk",
     image_url:
@@ -57,3 +57,5 @@ export const QUOTES: Quote[] = [
     current_flag: FLAG.EUA,
   },
 ];
+
+export { QUOTES };
