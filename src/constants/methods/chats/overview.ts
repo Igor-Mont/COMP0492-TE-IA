@@ -41,6 +41,28 @@ const messagesOverviewIA: ChatMessage[] = [
     time: "19:11",
     status: "Vista",
   },
+  {
+    owner: "Professor",
+    description: "E o vídeo intuitivo, como foi feito?",
+    left_talker: true,
+    time: "19:12",
+    status: "Entregue",
+  },
+  {
+    owner: "Aluno",
+    description: "Usamos o Steve AI para gerar o vídeo com cenas.",
+    left_talker: false,
+    time: "19:13",
+    status: "Vista",
+  },
+  {
+    owner: "Aluno",
+    description:
+      "Antes de gerar as cenas, utilizamos o ChatGPT para gerar as frases de cada cena baseado nos textos da seção (https://chat.openai.com/share/bcdabcdf-87a1-4c32-8910-12d55df47e33). E assim conseguimos gerar o vídeo.",
+    left_talker: false,
+    time: "19:13",
+    status: "Vista",
+  },
 ];
 
 export { messagesOverviewIA };

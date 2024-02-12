@@ -1,5 +1,6 @@
 import IAPainting from "../../assets/ia_painting.png";
 import IAThinking from "../../assets/ia_thinking.png";
+import IntuitiveVideo from "../../assets/text_to_video.mp4";
 
 function OverviewIA(): JSX.Element {
   return (
@@ -78,6 +79,15 @@ function OverviewIA(): JSX.Element {
           </p>
         </div>
       </article>
+      <div className="divider">
+        <div className="badge badge-info text-lg p-3 badge-outline">
+          Video intuitivo
+        </div>
+      </div>
+      <video className="w-full" controls>
+        <source src={IntuitiveVideo} type="video/mp4" />
+        Seu navegador não suporta o elemento <code>video</code>.
+      </video>
       <div className="divider">
         <div className="badge badge-info text-lg p-3 badge-outline">Fases</div>
       </div>

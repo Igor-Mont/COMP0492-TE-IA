@@ -3,6 +3,7 @@ import BingLogo from "../../assets/bing_logo.png";
 import FineShareLogo from "../../assets/fineshare_logo.svg";
 import VoClonerLogo from "../../assets/vocloner_logo.png";
 import ElevenLabsLogo from "../../assets/elevenlabs_logo.png";
+import SteveAiLogo from "../../assets/steve_ai.svg";
 import { messagesOverviewIA, messagesQuotes } from "../../constants/methods";
 import { ChatMessages } from "../ChatMessages/ChatMessages";
 
@@ -20,6 +21,11 @@ function Methods(): JSX.Element {
             className="w-[150px] sm:w-[200px]"
             src={BingLogo}
             alt="Bing logo"
+          />
+          <img
+            className="w-[100px] sm:w-[180px]"
+            src={SteveAiLogo}
+            alt="Steve AI logo"
           />
         </div>
       </ChatMessages>
