@@ -4,8 +4,10 @@ import FineShareLogo from "../../assets/fineshare_logo.svg";
 import VoClonerLogo from "../../assets/vocloner_logo.png";
 import ElevenLabsLogo from "../../assets/elevenlabs_logo.png";
 import SteveAiLogo from "../../assets/steve_ai.svg";
-import { messagesOverviewIA, messagesQuotes } from "../../constants/methods";
+import ChatGptLogo from "../../assets/chatgpt-logo.svg";
+import { messagesOverviewIA, messagesQuotes} from "../../constants/methods";
 import { ChatMessages } from "../ChatMessages/ChatMessages";
+import { messagesDashboard } from "../../constants/methods/chats/dashboard";
 
 function Methods(): JSX.Element {
   return (
@@ -47,6 +49,15 @@ function Methods(): JSX.Element {
             src={ElevenLabsLogo}
             className="w-[150px] sm:w-[200px]"
             alt="LLElevenLabs logo"
+          />
+        </div>
+      </ChatMessages>
+      <ChatMessages title="Desempenho de algoritmos de IA" messages={messagesDashboard}>
+        <div className="w-full divider my-12">
+          <img
+            src={ChatGptLogo}
+            className="w-[30px] sm:w-[80px]"
+            alt="FineShare logo"
           />
         </div>
       </ChatMessages>
