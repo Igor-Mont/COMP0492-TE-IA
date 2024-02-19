@@ -294,7 +294,7 @@ function DiscussionAI() {
                 fill="#8884d8"
                 label
               >
-                {data2.map((entry, index) => (
+                {data2.map((_, index) => (
                   <Cell
                     key={`cell-${index}`}
                     fill={COLORS[index % COLORS.length]}
