@@ -1,7 +1,85 @@
+import React from "react";
+import { ResponsiveContainer, LineChart, Line, PieChart, Pie, Cell, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from "recharts";
+
 import AIBalance from "../../assets/ai_balance.jpeg";
 import IAUsing from "../../assets/ai_using.jpeg";
 
-function DiscussionAI(): JSX.Element {
+function DiscussionAI() {
+  const data1 = [
+    { name: "Busca online alimentada por IA", percent: 49 },
+    { name: "Receitas geradas por IA", percent: 48 },
+    { name: "Assistentes inteligentes alimentados por IA", percent: 48 },
+    { name: "Produtos projetados por IA com base nas tendências dos consumidores", percent: 44 },
+    { name: "Navegação em veículos alimentados por IA", percent: 44 },
+    { name: "Ferramentas de IA para polícia e justiça criminal", percent: 43 },
+    { name: "Listas de compras geradas por IA", percent: 42 },
+    { name: "Recomendações de compras geradas por IA", percent: 42 },
+    { name: "Recomendações de voos e hotéis alimentadas por IA", percent: 41 },
+    { name: "Recomendações de menu em restaurantes geradas por IA", percent: 40 },
+    { name: "Agentes de viagem virtual e suporte ao cliente alimentados por IA", percent: 40 },
+    { name: "Conselhos de planejamento financeiro assistidos por IA", percent: 39 },
+    { name: "Livros e contos gerados por IA", percent: 38 },
+    { name: "Itinerários de viagem personalizados gerados por IA", percent: 38 },
+    { name: "Consultas médicas alimentadas por IA", percent: 38 },
+    { name: "Ferramentas de IA que ajudam programadores a codificar", percent: 37 },
+    { name: "Conselhos de investimento assistidos por IA", percent: 37 },
+    { name: "Guias de presentes personalizados gerados por IA", percent: 37 },
+    { name: "Serviços de preparação de impostos assistidos por IA", percent: 36 },
+    { name: "Ferramentas de áudio geradas que podem replicar vozes de pessoas", percent: 35 },
+    { name: "Filmes gerados por IA", percent: 34 },
+    { name: "Artigos de notícias gerados por IA", percent: 34 },
+    { name: "Serviço ao cliente alimentado por IA", percent: 34 },
+    { name: "Arte estática gerada por IA", percent: 33 },
+    { name: "Veículos autônomos alimentados por IA", percent: 32 },
+    { name: "Terapia e coaching de vida alimentados por IA", percent: 30 },
+    { name: "Anúncios gerados por IA", percent: 29 },
+    { name: "Personalidades de mídia social geradas por IA", percent: 29 },
+    { name: "Séries de TV geradas por IA", percent: 29 },
+    { name: "Alcance de vendas alimentado por IA", percent: 27 },
+    { name: "Amigos virtuais alimentados por IA", percent: 27 },
+    { name: "Porta-vozes de empresa simulados por IA", percent: 27 },
+    { name: "Legendas de mídia social geradas por IA", percent: 25 },
+    { name: "Atores gerados por IA", percent: 24 },
+    { name: "Parceiros românticos virtuais alimentados por IA", percent: 21 },
+    { name: "Deepfakes", percent: 21 },
+  ];
+
+  const data2 = [
+    { name: 'Aumento de produtividade', percent: 32.8 },
+    { name: 'Acelerar aprendizado', percent: 25.17 },
+    { name: 'Maior eficiência', percent: 24.96 },
+    { name: 'Melhoria na precisão da codificação', percent: 13.31 },
+    { name: 'Melhoria na colaboração', percent: 3.75 },
+  ];
+
+  const COLORS = ['#FF6384', '#36A2EB', '#FFCE56', '#4CAF50', '#9C27B0'];
+
+  const data3 = [
+    { year: '2021', marketSize: 95602.77 },
+    { year: '2022', marketSize: 142319.8 },
+    { year: '2023', marketSize: 207902.42 },
+    { year: '2024', marketSize: 298246.87 },
+    { year: '2025', marketSize: 420465.53 },
+    { year: '2026', marketSize: 582948.69 },
+    { year: '2027', marketSize: 795384.63 },
+    { year: '2028', marketSize: 1068718.47 },
+    { year: '2029', marketSize: 1415054.84 },
+    { year: '2030', marketSize: 1847495.6 },
+  ];
+
+  const data4 = [
+    { year: '2021', marketSize: 6865.68 },
+    { year: '2022', marketSize: 9392.25 },
+    { year: '2023', marketSize: 12825.12 },
+    { year: '2024', marketSize: 17397.27 },
+    { year: '2025', marketSize: 23347.14 },
+    { year: '2026', marketSize: 30888.27 },
+    { year: '2027', marketSize: 40170.19 },
+    { year: '2028', marketSize: 51216.99 },
+    { year: '2029', marketSize: 63867.59 },
+    { year: '2030', marketSize: 77726.85 },
+  ];
+
   return (
     <main className="w-full flex flex-col gap-4">
       <article className="prose prose-headings:underline max-w-none xl:prose-xl flex items-center flex-col md:flex-row">
@@ -97,6 +175,25 @@ function DiscussionAI(): JSX.Element {
             aplicações de IA, como busca online, assistentes inteligentes, e receitas geradas por IA, 
             entre outros.
         </p>  
+
+    <div className="w-full flex justify-center items-center overflow-auto">
+      <ResponsiveContainer width="90%" height={970}>
+        <BarChart
+          layout="vertical"
+          data={data1}
+          margin={{ top: 20, right: 1, left: 20, bottom: 5 }}
+        >
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis type="number" />
+          <YAxis dataKey="name" type="category" width={500} />
+          <Tooltip />
+          <Legend />
+          <Bar dataKey="percent" fill="#4CAF50" />
+        </BarChart>
+      </ResponsiveContainer>
+    </div>
+
+
     </article>
     <div className="divider">
         <div className="badge badge-info md:text-lg badge-sm md:badge-md text-sm p-1 badge-outline">
@@ -123,6 +220,29 @@ function DiscussionAI(): JSX.Element {
         uma maior eficiência operacional e, potencialmente, a uma redução nos custos de produção
         </p>
 
+    <div className="w-full flex justify-center items-center overflow-auto">
+      <ResponsiveContainer width="90%" height={600}>
+        <PieChart>
+          <Pie
+            data={data2}
+            dataKey="percent"
+            nameKey="name"
+            cx="50%"
+            cy="50%"
+            outerRadius={150}
+            fill="#8884d8"
+            label
+          >
+            {data2.map((entry, index) => (
+              <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+            ))}
+          </Pie>
+          <Tooltip />
+          <Legend />
+        </PieChart>
+      </ResponsiveContainer>
+    </div>
+
         <p>
         O gráfico abaixo aborda a projeção de crescimento do mercado global de inteligência
         artificial (IA) para a próxima década de uma <a href='https://www.nextmsc.com/report/explainable-ai-market' 
@@ -135,6 +255,19 @@ function DiscussionAI(): JSX.Element {
         no interesse do Google de 2022 a 2023, impulsionado pelo lançamento do ChatGPT 3.0
         </p> 
 
+    <div className="w-full flex justify-center items-center overflow-auto">
+      <ResponsiveContainer width="90%" height={600}>
+        <BarChart data={data3}>
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="year" />
+          <YAxis width={100}/>
+          <Tooltip />
+          <Legend />
+          <Bar dataKey="marketSize" fill="skyblue" label={{ position: 'top' }} />
+        </BarChart>
+      </ResponsiveContainer>
+    </div>
+
         <p>
         O <a href='https://www.nextmsc.com/report/ai-robots-market' 
             className="text-blue-500 no-underline">relatório</a> sobre o mercado global de robótica AI destaca a previsão da presença de robôs
@@ -146,6 +279,19 @@ function DiscussionAI(): JSX.Element {
         Enquanto isso, os custos dos robôs de serviço estão aumentando, especialmente na
         Europa, devido à crescente demanda por mão de obra.
         </p> 
+
+        <div className="w-full flex justify-center items-center overflow-auto">
+      <ResponsiveContainer width="90%" height={400}>
+        <LineChart data={data4}>
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="year" />
+          <YAxis />
+          <Tooltip />
+          <Legend />
+          <Line type="monotone" dataKey="marketSize" stroke="rgba(54, 162, 235, 1)" fill="rgba(54, 162, 235, 0.2)" />
+        </LineChart>
+      </ResponsiveContainer>
+    </div>
 
     </article>
     </main>
